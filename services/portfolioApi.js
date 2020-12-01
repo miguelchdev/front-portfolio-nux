@@ -1,5 +1,7 @@
 import axios from "axios";
 
+axios.defaults.baseURL = process.env.NUXT_ENV_API_URL || "";
+
 const get = async (url, params) => {
     try {
         const { data } = await axios.get(url, {

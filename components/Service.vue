@@ -66,10 +66,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-/* global styles */
-//@import "@/assets/styles/base.scss";
-</style>
+
 
 <style lang="scss" scoped>
 @import "@/assets/styles/responsive-breakpoints.scss";

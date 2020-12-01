@@ -1,0 +1,34 @@
+{
+    "title":"Miguel Angel Chacón Portafolio",
+    "introduction": { "myWork": "Mi proyectos","cv":"Currículum" },
+    "services": {"services":"Servicios"},
+    "projects": { "all": "Todos","btnGo":"Ir al proyecto."},
+    "contact": {
+        "name": "Nombre",
+        "email": "Correo Electrónico",
+        "message": "Mensaje",
+        "send": "Enviar",
+        "dialog": {
+            "success": {
+                "title": "Gracias",
+                "body": "Se ha enviado su mensaje."
+            },
+            "error": {
+                "title": "Error",
+                "body": "Su solicitud no pudo ser procesada, intente más tarde."
+            }
+        }
+    },"project":{
+        "date":"Fecha",
+        "technologys":"Tecnologías",
+        "gallery":"Fotos",
+        "button-go":"Enlace al proyecto.",
+        "project":"Proyecto: {field}"
+    },
+    "errors": {
+        "missing_input": "Debe ingresar un {field}.",
+        "invalid_input": "Debe ingresar un {field} valido",
+        "missing_option": "Debe seleccionar una opción.",
+        "too_short": "{field} muy corto."
+    }
+}

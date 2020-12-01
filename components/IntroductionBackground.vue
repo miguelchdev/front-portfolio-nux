@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { cloudinarySrcSet } from "@/helpers";
+import { cloudinarySrcSet } from "~/helpers";
 
 export default {
     name: "IntroductionBackground",

@@ -1,0 +1,35 @@
+{
+    "title":"Miguel Angel Chacón Portfolio",
+    "introduction": { "myWork": "My work","cv":"Resume" },
+    "services": {},
+    "projects": { "all": "All" ,"btnGo":"Go."},
+    "contact": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send",
+        "dialog": {
+            "success": {
+                "title": "Thanks",
+                "body": "Your message have been sended."
+            },
+            "error": {
+                "title": "Error",
+                "body": "Your message have been sended,try again."
+            }
+        }
+    },
+    "project":{
+        "date":"Date",
+        "technologys":"Techologys",
+        "gallery":"Gallery",
+         "button-go":"Link to project",
+         "project":"Project: {field}"
+    },
+    "errors": {
+        "missing_input": "Missing {field}.",
+        "invalid_input": "Invalid {field}.",
+        "missing_option": "You should choose an option",
+        "too_short": "{field} too short."
+    }
+}

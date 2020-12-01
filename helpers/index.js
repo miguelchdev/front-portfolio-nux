@@ -1,3 +1,5 @@
+
+
 export const filterFun = (toFilter, property, query) => {
     if (query == "") return toFilter;
 
@@ -36,8 +38,11 @@ export const checkName = (name) =>
         name
     );
 
-export const cloudinaryImage = (url,options=[]) =>{
+export const cloudinaryImage = (url="",options=[]) =>{
+    if(!url) return "";
+    
     let[ partOne,parTwo] = url.split('upload/')
+
     let transformations =   options.reduce((prev, act, index, array) => {
         let isLastElement = index == array.length - 1;
         let symbol = isLastElement ? "/":",";

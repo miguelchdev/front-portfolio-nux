@@ -1,4 +1,5 @@
 import portfolioApi from '@/services/portfolioApi'
+import {onlyUnique,filterFun} from '~/helpers'
 
 export const state = () => ({
   items: [],
