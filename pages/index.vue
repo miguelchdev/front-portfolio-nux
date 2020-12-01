@@ -46,7 +46,6 @@ export default {
     },
     created() {
         this.fetchPages();
-        console.log(process.env.NUXT_ENV_API_URL)
     }
 
 }

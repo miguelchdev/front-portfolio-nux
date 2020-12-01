@@ -1,4 +1,4 @@
-import portfolioApi from '@/services/portfolioApi'
+import portfolioApi from '~/services/portfolioApi'
 import {onlyUnique,filterFun} from '~/helpers'
 
 export const state = () => ({
@@ -41,12 +41,13 @@ export const actions = {
   },
   async fetchProject({ commit, getters, dispatch }, id) {
     let project = getters.getProjectById(id)
-
+    
     if (project) {
       return project
     } else {
       dispatch('addAction', 'fetchProject', { root: true })
       project = await portfolioApi.getProject(id)
+      
       dispatch('removeAction', 'fetchProject', { root: true })
 
       return project

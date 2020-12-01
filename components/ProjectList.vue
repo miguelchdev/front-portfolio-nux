@@ -52,8 +52,8 @@ export default {
     methods: {
         goTo(projectId) {
             this.$router.push({
-                name: "project",
-                params: { id: projectId }
+                path: `project/${projectId}`
+               
             });
         }
     },
