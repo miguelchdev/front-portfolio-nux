@@ -86,18 +86,18 @@ export default {
   generate: {
     async routes() {
         const {
-          data: { count },
+          data: { results },
         } = await axios.get(
-          `${process.env.NUXT_ENV_API_URL}api/projects/`
+          `${process.env.NUXT_ENV_API_URL}api/projects/?fields=id`
         )
-        const projects = Array.from({ length: count }, (_, i) => i + 1)
+      
        
-        const route = (id) => `${lang}/project/${id}`
+        const route = ({id}) => `${lang}/project/${id}`
 
-        let lang = "/";
-        const spanish = projects.map(route)
+        let lang = "";
+        const spanish = results.map(route)
         lang = "/en"
-        const english = projects.map(route)
+        const english = results.map(route)
         console.log({english,spanish})
         return [...english, ...spanish];
     
