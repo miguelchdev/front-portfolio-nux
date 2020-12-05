@@ -23,6 +23,7 @@ export default {
     async asyncData({ store }) {
         await store.dispatch('bio/fetchBio')
         await store.dispatch('pages/fetchPages')
+        await store.dispatch('projects/fetchProjects')
     },
     computed: {
         ...mapState('pages', [

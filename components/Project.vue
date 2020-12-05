@@ -101,9 +101,6 @@ export default {
             changePage: "changePage"
         })
     },
-    mounted() {
-        this.getProjects();
-    },
     watch: {
         tab(value) {
             let category = value == 0 ? "" : this.categories[value - 1];

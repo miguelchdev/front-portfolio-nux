@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -17,9 +18,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/styles/base.scss',
-  ],
+  css: ['@/assets/styles/base.scss'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
 
@@ -58,9 +57,7 @@ export default {
   ],
   i18n: {},
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {
-   
-  },
+  axios: {},
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
@@ -71,19 +68,39 @@ export default {
       },
       themes: {
         light: {
-          light:'#fafafa',
+          light: '#fafafa',
           lightText: '#717171',
           lightHeading: '#323232',
-          dark:'#1a1a1a',
-          darkHeading:'#ffffff',
-          darkText:'#d7d7d7',
-          gray:'#262626',
-          primary:'#1a1a1a'
+          dark: '#1a1a1a',
+          darkHeading: '#ffffff',
+          darkText: '#d7d7d7',
+          gray: '#262626',
+          primary: '#1a1a1a',
         },
       },
     },
   },
-  loading:false,
+  loading: false,
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  generate: {
+    async routes() {
+        const {
+          data: { count },
+        } = await axios.get(
+          `${process.env.NUXT_ENV_API_URL}api/projects/`
+        )
+        const projects = Array.from({ length: count }, (_, i) => i + 1)
+       
+        const route = (id) => `${lang}/project/${id}`
+
+        let lang = "/";
+        const spanish = projects.map(route)
+        lang = "/en"
+        const english = projects.map(route)
+        console.log({english,spanish})
+        return [...english, ...spanish];
+    
+    },
+  },
 }
