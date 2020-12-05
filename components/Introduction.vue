@@ -80,14 +80,12 @@ export default {
     name: "Introduction",
     components: { IntroductionBackground },
     props: { title: String, images: Object, page_contents: Object },
-  
     computed: {
         ...mapState("bio", ["welcome_message", "about", "social_networks","cvLink"]),
         ...mapGetters("bio", ["full_name","ready"]),
     },
     created() {
         this.addAction('banner');
-        this.getBio();
     },
     methods: {
         ...mapActions("bio", { getBio: "fetchBio" }),

@@ -1,6 +1,6 @@
 <template>
- <div>
-    <introduction
+    <div>
+        <introduction
             @click="go"
             v-bind="introduction"
         ></introduction>
@@ -13,40 +13,37 @@
         ></project>
 
         <contact v-bind="contact"></contact>
- </div>
+    </div>
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
+    async asyncData({ store }) {
+        await store.dispatch('bio/fetchBio')
+        await store.dispatch('pages/fetchPages')
+    },
     computed: {
-        ...mapState("pages", [
-            "services",
-            "contact",
-            "introduction",
-            "projects"
+        ...mapState('pages', [
+            'services',
+            'contact',
+            'introduction',
+            'projects',
         ]),
-        ...mapState("bio", [
-          'about',
-        ]),
-        short_description(){
-            return this.about.slice(0,120);
-        }
+        ...mapState('bio', ['about']),
+        short_description() {
+            return this.about.slice(0, 120)
+        },
     },
     methods: {
-        ...mapActions("pages", ["fetchPages"]),
         go() {
             this.$vuetify.goTo('#project', {
                 duration: 750,
                 offset: 0,
-                easing: "easeInQuad"
-            });
-        }
+                easing: 'easeInQuad',
+            })
+        },
     },
-    created() {
-        this.fetchPages();
-    }
-
 }
 </script>
