@@ -85,22 +85,20 @@ export default {
   build: {},
   generate: {
     async routes() {
-        const {
-          data: { results },
-        } = await axios.get(
-          `${process.env.NUXT_ENV_API_URL}api/projects/?fields=id`
-        )
-      
-       
-        const route = ({id}) => `${lang}/project/${id}`
+      const {
+        data: { results },
+      } = await axios.get(
+        `${process.env.NUXT_ENV_API_URL}api/projects/?fields=id`
+      )
 
-        let lang = "";
-        const spanish = results.map(route)
-        lang = "/en"
-        const english = results.map(route)
-        console.log({english,spanish})
-        return [...english, ...spanish];
-    
+      const route = ({ id }) => `${lang}/project/${id}`
+
+      let lang = ''
+      const spanish = results.map(route)
+      lang = '/en'
+      const english = results.map(route)
+      console.log({ english, spanish })
+      return [...english, ...spanish]
     },
   },
 }
