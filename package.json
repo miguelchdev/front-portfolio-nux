@@ -13,7 +13,8 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "nuxt-i18n": "^6.15.4"
+    "nuxt-i18n": "^6.15.4",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
