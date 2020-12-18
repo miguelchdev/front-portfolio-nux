@@ -30,7 +30,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
-    'nuxt-purgecss',
+    
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -62,6 +62,7 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
+    treeShake:true,
     customVariables: ['~/assets/variables.scss'],
     theme: {
       options: {
