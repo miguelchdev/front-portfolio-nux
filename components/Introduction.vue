@@ -17,13 +17,13 @@
                 >
                     <v-scroll-x-transition appear>
                         <p
-                            v-if="ready"
+                            v-show="ready"
                             class="mx-sm-0 mx-auto"
                         >{{ welcome_message }}</p>
                     </v-scroll-x-transition>
 
                     <v-scroll-x-transition appear>
-                        <div v-if="ready" class="mt-auto">
+                        <div v-show="ready" class="mt-auto">
                             <h1 class="text-sm-left text-center name mb-5">
                                 {{ full_name }}
                             </h1>
@@ -54,7 +54,7 @@
                         </div>
                     </v-scroll-x-transition>
                     <v-scroll-x-transition appear>
-                        <div v-if="ready" class="mt-auto mx-sm-0 mx-auto pt-5">
+                        <div v-show="ready" class="mt-auto mx-sm-0 mx-auto pt-5">
                             <a
                                 v-for="(item, index) in social_networks"
                                 :key="index"
