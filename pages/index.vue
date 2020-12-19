@@ -13,6 +13,7 @@
     />
 
     <contact v-bind="contact" />
+  </div>
 </template>
 
 <script>
@@ -38,9 +39,6 @@ export default {
         easing: 'easeInQuad',
       })
     },
-  },
-  async created() {
-    await store.dispatch('projects/fetchProjects')
   },
 }
 </script>

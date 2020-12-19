@@ -126,6 +126,8 @@ export default {
         btnGo() {
             return this.$t("projects.btnGo");
         }
+    },async created(){
+        await this.getProjects();
     }
 };
 </script>
